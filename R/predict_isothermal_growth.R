@@ -69,7 +69,7 @@ trilinear_model <- function(times, logN0, mu, lambda, logNmax) {
 }
 
 #' Two phase model
-Twolinear_model <- function(times, logN0, mu, lambda) {
+twolinear_model <- function(times, logN0, mu, lambda) {
     
     # mu <- mu/log(10)
 

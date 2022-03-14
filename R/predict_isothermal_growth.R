@@ -164,7 +164,7 @@ predict_isothermal_growth <- function(model_name, times, model_pars, check = TRU
                                  model_pars$lambda, model_pars$logNmax),
            Trilinear = trilinear_model(times, model_pars$logN0, model_pars$mu,
                                        model_pars$lambda,model_pars$logNmax),
-           Twolinear = Trilinear_model(times, model_pars$logN0, model_pars$mu,
+           Twolinear = twolinear_model(times, model_pars$logN0, model_pars$mu,
                                        model_pars$lambda),
            Logistic = logistic_model(times, model_pars$logN0, model_pars$mu,
                                      model_pars$lambda, model_pars$C),

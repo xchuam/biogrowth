@@ -38,6 +38,16 @@ primary_model_data <- function(model_name=NULL) {
                                                     "growth curves. Food Microbiology, 14(4), 313-326.",
                                                     "https://doi.org/10.1006/fmic.1997.0125")
                                         ),
+                       Twolinear = list(identifier = "Twolinear",
+                                        name = "Two-linear growth model",
+                                        pars = c("logN0", "mu", "lambda"),
+                                        model = twolinear_model,
+                                        ref = paste("Buchanan, R. L., Whiting, R. C., and Damert, W. C. (1997).",
+                                                    "When is simple good enough: A comparison of the Gompertz,",
+                                                    "Baranyi, and three-phase linear models for fitting bacterial",
+                                                    "growth curves. Food Microbiology, 14(4), 313-326.",
+                                                    "https://doi.org/10.1006/fmic.1997.0125")
+                                        ),
                        Logistic = list(identifier = "Logistic",
                                        name = "Logistic growth model",
                                        pars = c("logN0", "C", "mu", "lambda"),

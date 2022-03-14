@@ -68,6 +68,18 @@ trilinear_model <- function(times, logN0, mu, lambda, logNmax) {
 
 }
 
+#' Two phase model
+Twolinear_model <- function(times, logN0, mu, lambda) {
+    
+    # mu <- mu/log(10)
+
+    logN <- logN0 + mu*(times - lambda)
+    logN[times < lambda] <- logN0
+
+    logN
+
+}
+
 #' Logistic growth model
 #' 
 #' @inheritParams iso_repGompertz
@@ -152,6 +164,8 @@ predict_isothermal_growth <- function(model_name, times, model_pars, check = TRU
                                  model_pars$lambda, model_pars$logNmax),
            Trilinear = trilinear_model(times, model_pars$logN0, model_pars$mu,
                                        model_pars$lambda,model_pars$logNmax),
+           Twolinear = Trilinear_model(times, model_pars$logN0, model_pars$mu,
+                                       model_pars$lambda),
            Logistic = logistic_model(times, model_pars$logN0, model_pars$mu,
                                      model_pars$lambda, model_pars$C),
            Richards = richards_model(times, model_pars$logN0, model_pars$mu,

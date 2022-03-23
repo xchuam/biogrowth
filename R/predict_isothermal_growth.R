@@ -80,6 +80,18 @@ twolinear_model <- function(times, logN0, mu, lambda) {
 
 }
 
+#' Two phase model no lambda
+twolinear_no_lag_model <- function(times, logN0, mu, logNmax) {
+    
+    # mu <- mu/log(10)
+
+    logN <- logN0 + mu*(times)
+    logN[logN>logNmax] <- logNmax
+
+    logN
+
+}
+
 #' linear model 
 linear_model <- function(times, logN0, mu) {
     
@@ -177,7 +189,9 @@ predict_isothermal_growth <- function(model_name, times, model_pars, check = TRU
                                        model_pars$lambda,model_pars$logNmax),
            Twolinear = twolinear_model(times, model_pars$logN0, model_pars$mu,
                                        model_pars$lambda),
-           Linear = twolinear_model(times, model_pars$logN0, model_pars$mu),
+           Twolinear_nolag = twolinear_no_lag_model(times, model_pars$logN0, model_pars$mu,
+                                       model_pars$logNmax),
+           Linear = linear_model(times, model_pars$logN0, model_pars$mu),
            Logistic = logistic_model(times, model_pars$logN0, model_pars$mu,
                                      model_pars$lambda, model_pars$C),
            Richards = richards_model(times, model_pars$logN0, model_pars$mu,

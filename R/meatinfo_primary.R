@@ -28,7 +28,7 @@ primary_model_data <- function(model_name=NULL) {
                                       "to predicting bacterial growth in food. International Journal of Food",
                                       "Microbiology, 23(3-4), 277-294. https://doi.org/10.1016/0168-1605(94)90157-0")
                                       ),
-                       Trilinear = list(identifier = "Trilinear",
+                       Three_phase = list(identifier = "Three_phase",
                                         name = "Tri-linear growth model",
                                         pars = c("logN0", "logNmax", "mu", "lambda"),
                                         model = trilinear_model,
@@ -38,7 +38,7 @@ primary_model_data <- function(model_name=NULL) {
                                                     "growth curves. Food Microbiology, 14(4), 313-326.",
                                                     "https://doi.org/10.1006/fmic.1997.0125")
                                         ),
-                       Twolinear = list(identifier = "Twolinear",
+                       Two_phase = list(identifier = "Two_phase",
                                         name = "Two-linear growth model",
                                         pars = c("logN0", "mu", "lambda"),
                                         model = twolinear_model,
@@ -48,7 +48,7 @@ primary_model_data <- function(model_name=NULL) {
                                                     "growth curves. Food Microbiology, 14(4), 313-326.",
                                                     "https://doi.org/10.1006/fmic.1997.0125")
                                         ),
-                       Twolinear_nolag = list(identifier = "Twolinear_nolag",
+                       Expo_station = list(identifier = "Expo_station",
                                         name = "Two-linear growth model wihout lag",
                                         pars = c("logN0", "logNmax", "mu"),
                                         model = twolinear_no_lag_model,
@@ -58,7 +58,7 @@ primary_model_data <- function(model_name=NULL) {
                                                     "growth curves. Food Microbiology, 14(4), 313-326.",
                                                     "https://doi.org/10.1006/fmic.1997.0125")
                                         ),
-                       Linear = list(identifier = "Linear",
+                       One_phase = list(identifier = "One_phase",
                                         name = "Linear growth model",
                                         pars = c("logN0", "mu"),
                                         model = linear_model,
